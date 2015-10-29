@@ -1,11 +1,11 @@
-<div class="text-center text-muted">
+<div class="text-center">
 	<% if signed_in? %>
-		<h1 class="lead welcome-user font">Welcome, <%= @couple.name1 %> and <%= @couple.name2 %>! </h1>
+		<h1 class="lead welcome-user font titleSize">Welcome, <%= @couple.name1 %> and <%= @couple.name2 %>! </h1>
 	
 
-	<button><%= link_to "Edit Registry", edit_couple_registry_path(@couple.id, @registry), method: :get%></button>
+	<button class="signInButton2"><%= link_to "Edit Registry", edit_couple_registry_path(@couple.id, @registry), method: :get%></button>
 
-	<button><%= link_to "View Registry", couple_registry_path(@couple.id, @registry), method: :get%></button>
+	<button class="signInButton2"><%= link_to "View Registry", couple_registry_path(@couple.id, @registry), method: :get%></button>
 
 
 

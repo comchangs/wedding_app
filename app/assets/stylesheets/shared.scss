@@ -1,4 +1,9 @@
 .navbar-default {
     background-color: #F8F8F8;
     border-color: black;
+    border-top: 3px dotted #000;
+	border-bottom: 3px dotted #000;
+	box-shadow: inset 0 -1px 0 0 #000, inset 0 1px 0 0 #000, 0 1px 0 0 #000, 0 -1px 0 0 #000;
+	margin-bottom: 1px;
 }
+

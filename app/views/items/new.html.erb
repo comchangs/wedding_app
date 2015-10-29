@@ -1,18 +1,27 @@
-<div class="container">
-	<h1 class="form-title">Add an Item </h1>
-	<p><%=form_for @item, url: registry_items_path(@registry.id), method: :post do |p|%></p>
-	<form>
-		<div class="input-group">
-			<%=p.text_field :name, placeholder: "name", required: true, class: "form-control" %>
-		</div> <br>
-		<div class="input-group">
-			<%=p.text_field :price, placeholder: "price", required: true, class: "form-control"%>
-		</div> <br>
-		<div class="input-group">
-			<%=p.text_field :description, placeholder: "description", required: true, class: "form-control" %>
-		</div> <br>
-		
-		<%=p.submit "add item", class: "btn btn-primary" %>
-	</form>
-	<%end%>
-</div>
+<body class="welcome">	
+	<div class="container">
+		<div class="row emailWidth">
+	        <div class="col-md-12">
+				<div class="wrap">
+					<p class="form-title">
+						Add an Item </p>
+					<%=form_for @item, url: registry_items_path(@registry.id), method: :post, :html => {:class => "loginForm"} do |p|%>
+					
+						<div class="input-group">
+							<%=p.text_field :name, placeholder: "name", required: true, class: "emailSpace" %>
+						</div> <br>
+						<div class="input-group">
+							<%=p.text_field :price, placeholder: "price", required: true, class: "emailSpace" %>
+						</div> <br>
+						<div class="input-group">
+							<%=p.text_field :description, placeholder: "description", required: true, class: "emailSpace" %>
+						</div> <br>
+						
+						<%=p.submit "add item", class: "signInButton2" %>
+					
+					<%end%>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>

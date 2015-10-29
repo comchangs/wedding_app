@@ -1,30 +1,56 @@
+
+<header>
+	<div class="row">
+        <div class="col-lg-12">
+            <img class="img-responsive gif" src="http://cdn.makeagif.com/media/10-29-2015/uEXL7p.gif" alt="">
+			<div>
+				<h1 class="name font">Welcome to</h1> <h1 class="name font"><%= @couple.name1 %> and <%= @couple.name2 %> registry!</h1>
+				<br>
+					<hr class="star-light">
+				<h2 class="skills font">help them buy a <%= @registry.theam %></h2>
+			</div>
+</header>
 <div class="container">
-	<div >
-		<div>
-			<h1 class="font">Welcom to <%= @couple.name1 %> and <%= @couple.name2 %> registry!</h1>
+			<br>
+			<p class="font size">Select an items of the boat from the list below and all the proseads will go twords alvin and sakina buying a boat.</p>
+			<br>
+			<hr>
+			<div >
 
-			<h2 class="font">help them buy a <%= @registry.theam %></h2>
-		</div>
-		<div class="font">
+				<!-- option one  -->
+				<script type="text/javascript">
 
-			
-			<script type="text/javascript">
-				$(".addItemPost").on("click", function(e) {
-					var id=e.target.id
-					var item = e.target.parent
-					console.log(id)
-					console.log(item.child)
-					localStorage.setItem(id, JSON.stringify(item));
-				});
+					 var myFuncs = {
+					  localstorage.setItem();
+					};
+
+					 $(".addItemPost").on("click", function(e){
+					    myFuncs [data.func] ();
 				</script>
-			<% @items.each do |f| %>
-			<button class="addItemPost pull-right" id="<%= f.id %>">select</button>	
-				<p> <%= f.name %></p>
-				<p> <%= f.price %></p>
-				<p> <%= f.description %></p>
-				
-				<hr>
-			<% end %>
+
+				<!-- <button type="button" data-button='{"func": "localstorage.setItem()"}'>Select</button> -->
+
+				<!-- option two -->
+				<script type="text/javascript">
+					$(".addItemPost").on("click", function(e) {
+						var id=e.target.id
+						var item = e.target.parent
+						console.log(id)
+						console.log(item)
+						function what(t){
+							localStorage.setItem(id, JSON.stringify("data-button"));
+						};
+					});
+				</script>
+				<% @items.each do |f| %>
+				<button class="addItemPost pull-right signInButton2" data-button='{"func": "what"}' id="<%= f.id %>">select</button>	
+					<p class="itemTitle"> <%= f.name %></p>
+					<p class="font"> $<%= f.price %>.00</p>
+					<ul class="font italic"> <%= f.description %></ul>
+					<br>
+					<hr>
+				<% end %>
+			</div>
 		</div>
 	</div>
 </div>

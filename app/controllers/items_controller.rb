@@ -52,7 +52,7 @@ class ItemsController < ApplicationController
 		# @all_comments = Comment.all.where(:post_id => @post.id)
 		# @all_comments.destroy
 		
-		redirect_to "/cities/#{@city.id}"
+		redirect_to edit_couple_registry_path
 	end
 
 	def edit
