@@ -1,0 +1,33 @@
+<div class="text-center text-muted">
+	<div class="container">
+		<% if signed_in? %>
+			<div class="lead welcome-user"> <%= @couple.name1 %> and <%= @couple.name2 %> here is where you can edit your registry, your theam curently is 	
+				<p class="center-block"> <%=form_for @registry, url: "/couples/#{@couple.id}/registries/#{@registry.id}", method: :put do |p|%></p>
+					<form>
+						<div class="input-group">
+							<%=p.text_field :theam, placeholder: "#{@registry.theam}", class: "form-control" %>
+						</div> <br>
+						<%=p.submit "Update Theam" %>
+					</form>
+				<%end%>
+			</div>	
+
+				<button><%= link_to "add Item", new_registry_item_path(@registry), method: :get%></button>
+
+				<% @items.each do |f| %>
+					<p> <%= f['name'] %> </p> 
+					<p> <%= f['price'] %></p>
+					<p> <%= f['description'] %></p>
+					<button><%= link_to "edit this item", edit_item_path %></button>
+					<%= button_to "Delete Item", item_path, method: :delete, data: {confirm: "Are you sure?"}, class: "btn btn-primary" %>
+				<% end %>
+				
+
+
+				
+
+		
+		<%end%> <!-- if sined in -->
+	
+	</div>
+</div>

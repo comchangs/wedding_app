@@ -1,0 +1,28 @@
+
+
+<p><%=form_for @gift, url:  registry_gifts_path, method: :post do |p|%></p>
+	
+		<% @gift.items.each do |f| %>
+			
+			<p> <%= f['name'] %></p>
+			<p> <%= f['price'] %></p>
+			<p> <%= f['description'] %></p>
+			
+			<hr>
+		<% end %>
+
+
+		<div class="input-group">
+			<%=p.text_field :from, placeholder: "who is this from", required: true, class: "form-control" %>
+		</div> <br>
+		<div class="input-group">
+			<%=p.text_area :message, placeholder: "Wright a mesage to the lovely couple", required: true, class: "form-control"%>
+		</div> <br>
+		
+		<% @gift.items.each do |f| %>
+		<%=p.hidden_field :Item_id, :multiple => true, value: f.id %>
+		<% end %>
+
+		<%=p.submit "add item", class: "btn btn-primary" %>
+	
+<%end%>

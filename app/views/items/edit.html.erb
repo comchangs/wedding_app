@@ -1,0 +1,8 @@
+<h1>Edit</h1>
+<%= form_for @item do |f| %>
+	<%= f.text_field :name, placeholder: "name" %>
+	<%= f.text_field :price, placeholder: "price" %>
+	<%= f.text_field :description, placeholder: "description" %><br>
+	<%= f.submit "save" %>
+
+<% end %>

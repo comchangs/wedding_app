@@ -1,0 +1,18 @@
+<div class="container">
+	<h1 class="form-title">Add an Item </h1>
+	<p><%=form_for @item, url: registry_items_path(@registry.id), method: :post do |p|%></p>
+	<form>
+		<div class="input-group">
+			<%=p.text_field :name, placeholder: "name", required: true, class: "form-control" %>
+		</div> <br>
+		<div class="input-group">
+			<%=p.text_field :price, placeholder: "price", required: true, class: "form-control"%>
+		</div> <br>
+		<div class="input-group">
+			<%=p.text_field :description, placeholder: "description", required: true, class: "form-control" %>
+		</div> <br>
+		
+		<%=p.submit "add item", class: "btn btn-primary" %>
+	</form>
+	<%end%>
+</div>

@@ -1,0 +1,29 @@
+<div class="container">
+	<div class="row emailWidth">
+		<div class="col-md-12">
+			<div class="wrap">
+				<p class="form-title">
+			        What would you like your guests to help you buy</p>	
+						<%= form_for @registry, url: couple_registries_path, method: "post", :html => {:class => "loginForm"} do |f| %>
+							<% if @registry.errors.any? %>
+								<h3>Errors:</h3>
+									<% @registry.errors.full_messages.each do |message| %>
+										<h5><%= message %></h5>
+									<% end %>
+							<% end %>
+							<%= f.text_field :theam, placeholder: "what is your theam", required: true, class: "emailSpace" %><br>
+							
+							<%#=f.hidden_field :couple_id, value: @current_couple.id %> <br>
+							<%= f.submit "Creat Registry", class: "signInButton" %><br>
+						<% end %>
+						<div>
+						  <div class="heart x1"></div>
+						  <div class="heart x2"></div>
+						  <div class="heart x3"></div>
+						  <div class="heart x4"></div>
+						  <div class="heart x5"></div>
+						</div>
+			</div>
+		</div>
+	</div>
+</div>

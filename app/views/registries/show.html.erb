@@ -1,0 +1,37 @@
+<div class="container">
+	<div >
+		<div>
+			<h1 class="font">Welcom to <%= @couple.name1 %> and <%= @couple.name2 %> registry!</h1>
+
+			<h2 class="font">help them buy a <%= @registry.theam %></h2>
+		</div>
+		<div class="font">
+
+			
+			<script type="text/javascript">
+				$(".addItemPost").on("click", function(e) {
+					var id=e.target.id
+					var item = e.target.parent
+					console.log(id)
+					console.log(item.child)
+					localStorage.setItem(id, JSON.stringify(item));
+				});
+				</script>
+			<% @items.each do |f| %>
+			<button class="addItemPost pull-right" id="<%= f.id %>">select</button>	
+				<p> <%= f.name %></p>
+				<p> <%= f.price %></p>
+				<p> <%= f.description %></p>
+				
+				<hr>
+			<% end %>
+		</div>
+	</div>
+</div>
+
+	
+
+	
+
+
+</div> <!-- top of page div -->
